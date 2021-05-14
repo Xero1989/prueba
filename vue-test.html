@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      li {
+        cursor: pointer;
+      }
+      .completado {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 v-if="show_title">Mis Datos</h1>
+      <label>{{cantidad_tareas}}</label>
+      <ul>
+        <li
+          v-for="tarea in tareas"
+          @click="on_off_tarea_completada(tarea)"
+          :class="{completado: tarea.completado}"
+        >
+          {{tarea.tarea | toUpperCase}}
+        </li>
+      </ul>
+
+      <input type="text" v-model="nueva_tarea" />
+      <button @click="add_tarea">Adicionar</button>
+
+      <!-- <pre>{{$data}}</pre> -->
+
+      <people v-if=></people>
+
+    </main>
+
+    <script type="text/javascript" src="axios.min.js"></script>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="vue-test.js"></script>
+  </body>
+</html>
